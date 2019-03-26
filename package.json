@@ -1,0 +1,27 @@
+{
+  "name": "pwa-boilerplate",
+  "version": "1.0.0",
+  "description": "PWA boilerplate code",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "local-web-server": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RRoodselaar/PWA-boilerplate.git"
+  },
+  "keywords": [
+    "PWA",
+    "boilerplate"
+  ],
+  "author": "Jad Joubran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RRoodselaar/PWA-boilerplate/issues"
+  },
+  "homepage": "https://github.com/RRoodselaar/PWA-boilerplate#readme"
+}
