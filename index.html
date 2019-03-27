@@ -32,14 +32,15 @@
     </header>
 
     <script src="app.js"></script>
-    
+
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register("sw.js")
-                .then(registration => {
-                    console.log(registration);
-                })
-                .catch(console.error);
+            // first have all the resources loaded
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("sw.js")
+                    .then(console.log)
+                    .catch(console.error);
+            });
         }
     </script>
 </body>
