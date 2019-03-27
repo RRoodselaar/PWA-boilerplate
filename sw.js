@@ -1,30 +1,17 @@
-/**
- * Welcome to your Workbox-powered service worker!
- *
- * You'll need to register this file in your web app and you should
- * disable HTTP caching for this file too.
- * See https://goo.gl/nhQhGp
- *
- * The rest of the code is auto-generated. Please don't update this file
- * directly; instead, make changes to your Workbox build configuration
- * and re-run your build process.
- * See https://goo.gl/2aRDsh
- */
+importScripts(
+  // keep version up-to-date with Workbox version
+  "https://storage.googleapis.com/workbox-cdn/releases/4.1.1/workbox-sw.js"
+);
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.1.1/workbox-sw.js");
+console.log("⚙️ Hello from Service Worker");
 
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-});
+workbox.routing.registerRoute(
+  // add the URL to be cached in as a regular expression, like:
+  /https:\/\/jsonplaceholder\.typicode\.com/,
+  new workbox.strategies.NetworkFirst()
+);
 
-/**
- * The workboxSW.precacheAndRoute() method efficiently caches and responds to
- * requests for URLs in the manifest.
- * See https://goo.gl/S9QRab
- */
-self.__precacheManifest = [
+workbox.precaching.precacheAndRoute([
   {
     "url": "app.css",
     "revision": "d41d8cd98f00b204e9800998ecf8427e"
@@ -38,8 +25,11 @@ self.__precacheManifest = [
     "revision": "546e8bc5e0f4eed03999d1292eb59cef"
   },
   {
+    "url": "src-sw.js",
+    "revision": "b3816cd0bc0c8fae98ba8af009994cd6"
+  },
+  {
     "url": "workbox-config.js",
-    "revision": "2a5130c5c0adbb75c11ff6636f008fb6"
+    "revision": "636ce65a32df25a4b204746d4a15cb20"
   }
-].concat(self.__precacheManifest || []);
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+]);
