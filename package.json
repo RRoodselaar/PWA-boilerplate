@@ -2,15 +2,19 @@
   "name": "pwa-boilerplate",
   "version": "1.0.0",
   "description": "PWA boilerplate code",
-  "main": "index.html",
+  "main": "app.js",
   "dependencies": {},
   "devDependencies": {
+    "copy-webpack-plugin": "^5.0.2",
     "local-web-server": "^2.6.1",
-    "workbox-cli": "^4.1.1"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "workbox-cli": "^4.1.1",
+    "workbox-webpack-plugin": "^4.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "workbox injectManifest workbox-config.js"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",

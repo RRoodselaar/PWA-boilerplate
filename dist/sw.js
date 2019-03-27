@@ -1,7 +1,4 @@
-importScripts(
-  // keep version up-to-date with Workbox version
-  "https://storage.googleapis.com/workbox-cdn/releases/4.1.1/workbox-sw.js"
-);
+importScripts("precache-manifest.43f1c42db6a3208677977f74887d49f1.js", "https://storage.googleapis.com/workbox-cdn/releases/4.1.1/workbox-sw.js");
 
 console.log("⚙️ Hello from Service Worker");
 
@@ -11,4 +8,6 @@ workbox.routing.registerRoute(
   new workbox.strategies.NetworkFirst()
 );
 
-workbox.precaching.precacheAndRoute([]);
+// workbox.skipWaiting();
+
+workbox.precaching.precacheAndRoute(self.__precacheManifest);
