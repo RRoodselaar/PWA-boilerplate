@@ -4,6 +4,6 @@ Based on Jad Joubran's repo pwa-series (https://github.com/jadjoubran/pwa-series
 A demo of the latest version of this project is always available on Netlify: https://pwa-boilerplates.netlify.app/.
 
 How to try out the code:
-1 Clone the repo.
-2 Start a command shell in the `dist` directory.
-3 Start a local server with `npx serve`
+1. Clone the repo.
+1.  Start a command shell in the `dist` directory.
+1.  Start a local server with `npx serve`
