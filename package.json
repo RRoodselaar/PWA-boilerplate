@@ -9,11 +9,12 @@
     "local-web-server": "^2.6.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
     "workbox-cli": "^4.3.1",
     "workbox-webpack-plugin": "^4.3.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --env.mode development --colors",
     "build": "webpack"
   },
   "repository": {
