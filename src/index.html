@@ -15,10 +15,23 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         }
 
+        main {
+            display: flex;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;  
+        }
+        main section {
+            position: relative;
+            height: 100vh;
+            min-width: 100vw;
+            scroll-snap-align: start;
+        }
+
         header {
             background-color: navy;
             color: white;
-            position: fixed;
+            position: absolute;
             top: 0;
             right: 0;
             left: 0;
@@ -29,9 +42,18 @@
 </head>
 
 <body>
-    <header>
-        Title
-    </header>
+    <main>
+        <section>
+            <header>
+                Page 1
+            </header>
+        </section>
+        <section>
+            <header style="background-color: red">
+                Page 2
+            </header>
+        </section>
+    </main>
 
     <script src="app.js"></script>
 
