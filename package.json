@@ -5,7 +5,7 @@
   "main": "app.js",
   "dependencies": {},
   "devDependencies": {
-    "copy-webpack-plugin": "^6.0.2",
+    "copy-webpack-plugin": "^5.0.4",
     "local-web-server": "^2.6.1",
     "webpack": "^4.41.1",
     "webpack-cli": "^3.3.9",
