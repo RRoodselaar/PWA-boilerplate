@@ -6,6 +6,7 @@ workbox.routing.registerRoute(
   new workbox.strategies.NetworkFirst()
 );
 
+// uncomment only when service worker should activate a.s.a.p.
 // workbox.skipWaiting();
 
 workbox.precaching.precacheAndRoute(self.__precacheManifest);
