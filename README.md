@@ -7,3 +7,4 @@ How to try out the code:
 1. Clone the repo.
 1.  Start a command shell in the `dist` directory.
 1.  Start a local server with `npx serve`
+or use `npm run dev` for hot reload
