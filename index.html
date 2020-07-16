@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="A PWA boilerplate to build your progressive web apps in.">
+    <title>Title</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="navy" />
+    <style>
+        body {
+            margin: 0;
+
+            /* Native fonts for all platforms */
+            font-family:
+                system-ui,
+                /* Future proof */
+                -apple-system, BlinkMacSystemFont,
+                /* Safari, Chrome Mac/iOS */
+                "Segoe UI", Roboto, Oxygen,
+                /* Windows, Android, KDE */
+                Ubuntu, Cantarell, "Fira Sans",
+                /* Ubuntu, Gnome, Firefox OS */
+                "Droid Sans", "Helvetica Neue", sans-serif;
+            /* Old Android */
+        }
+
+        main {
+            display: flex;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+        }
+
+        main section {
+            position: relative;
+            height: 100vh;
+            min-width: 100vw;
+            scroll-snap-align: start;
+        }
+
+        header {
+            background-color: navy;
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            font-size: 2rem;
+            padding: 30px 40px;
+        }
+
+        .app-update {
+            display: none;
+            position: absolute;
+            right: 10px;
+        }
+
+        .app-update.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <header>
+                Page 1
+            </header>
+        </section>
+        <section>
+            <header style="background-color: red">
+                Page 2
+            </header>
+        </section>
+
+        <button id="app-update" class="app-update" aria-label="Update">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path fill="none" d="M0 0h24v24H0V0z" />
+                <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+            </svg>
+        </button>
+    </main>
+
+    <script src="app.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            // first have all the resources loaded
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("sw.js")
+                    .then(console.log)
+                    .catch(console.error);
+            });
+        }
+    </script>
+</body>
+
+</html>

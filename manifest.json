@@ -1,0 +1,22 @@
+{
+  "short_name": "Title on home screen",
+  "name": "Title on splash screen",
+  "background_color": "white",
+  "theme_color": "navy", /* title bar color */
+  // orientation: porttrait,
+  "start_url": "./",
+  "display": "standalone",
+  "icons": [
+  /* these two formats for favicon have to be present
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }*/
+  ]
+}
