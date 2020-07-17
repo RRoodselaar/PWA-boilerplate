@@ -1,6 +1,6 @@
 #!/bin/bash
 directory=dist
-branch=gh-pages
+targetbranch=gh-pages
 build_command() {
   npm run build
 }
@@ -15,8 +15,8 @@ fi
 echo -e "\033[0;32mDeleting old content...\033[0m"
 rm -rf $directory
 
-echo -e "\033[0;32mChecking out $branch...\033[0m"
-git worktree add $directory $branch
+echo -e "\033[0;32mChecking out $targetbranch...\033[0m"
+git worktree add $directory $targetbranch
 
 echo -e "\033[0;32mInstalling packages...\033[0m"
 npm install
@@ -24,11 +24,11 @@ npm install
 echo -e "\033[0;32mGenerating site...\033[0m"
 build_command
 
-echo -e "\033[0;32mDeploying $branch branch...\033[0m"
+echo -e "\033[0;32mDeploying $targetbranch branch...\033[0m"
 cd $directory &&
   git add --all &&
   git commit -m "Deploy updates" &&
-  git push --no-verify origin $branch
+  git push --no-verify origin $targetbranch
 
 echo -e "\033[0;32mCleaning up...\033[0m"
 cd ..
