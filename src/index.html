@@ -15,16 +15,16 @@
 
             /* Native fonts for all platforms */
             font-family:
-                system-ui,
                 /* Future proof */
-                -apple-system, BlinkMacSystemFont,
+                system-ui,
                 /* Safari, Chrome Mac/iOS */
-                "Segoe UI", Roboto, Oxygen,
+                -apple-system, BlinkMacSystemFont,
                 /* Windows, Android, KDE */
-                Ubuntu, Cantarell, "Fira Sans",
+                "Segoe UI", Roboto, Oxygen,
                 /* Ubuntu, Gnome, Firefox OS */
+                Ubuntu, Cantarell, "Fira Sans",
+                /* Old Android */
                 "Droid Sans", "Helvetica Neue", sans-serif;
-            /* Old Android */
         }
 
         main {
@@ -36,8 +36,8 @@
 
         main section {
             position: relative;
-            height: 100vh;
-            min-width: 100vw;
+            min-height: 100vh;
+            flex: 0 0 100vw;
             scroll-snap-align: start;
         }
 
