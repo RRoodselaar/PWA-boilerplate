@@ -8,9 +8,11 @@ build_command() {
 branch="$(git rev-parse --abbrev-ref HEAD)"
 
 if [ "$branch" != "master" ]; then
-  #echo "Only publishes to github pages from master branch"
-  exit 1
+  echo "Git Hook:only publishes to GitHub Pages from master branch"
+  exit 0
 fi
+
+echo "Git Hook: publishing to GitHub Pages from master branch..."
 
 echo -e "\033[0;32mDeleting old content...\033[0m"
 rm -rf $directory
