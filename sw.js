@@ -11,7 +11,6 @@ workbox.routing.registerRoute(
 // uncomment only when service worker should activate a.s.a.p.
 // workbox.skipWaiting();
 
-//add in src-sw.js
 addEventListener("message", event => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     skipWaiting();
