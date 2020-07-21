@@ -7,6 +7,7 @@ This repo now employs a scripted push of the build-artifacts to a specific branc
 Read more on this in:
 - Using Git Worktree to Deploy GitHub Pages: https://sangsoonam.github.io/2019/02/08/using-git-worktree-to-deploy-github-pages.html
 - Including Hooks in a Git Repository: https://www.darrenlester.com/blog/including-hooks-in-a-git-repository
+
 To use the Git Hook-strategy with this repo, just run `git config core.hooksPath .githooks` from the console in the root of your local copy.
 
 How to try out the code on your local machine:

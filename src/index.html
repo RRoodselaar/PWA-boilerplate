@@ -59,11 +59,42 @@
         .app-update {
             display: none;
             position: absolute;
-            right: 10px;
+            top: 12px;
+            right: 12px;
         }
 
         .app-update.show {
             display: block;
+            z-index: 9999;
+        }
+
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 70px);
+        }
+
+        .loading-spinner {
+            animation-duration: 0.75s;
+            animation-iteration-count: infinite;
+            animation-name: rotate-forever;
+            animation-timing-function: linear;
+            height: 30px;
+            width: 30px;
+            border: 3px solid navy;
+            border-right-color: transparent;
+            border-radius: 50%;
+        }
+
+        @keyframes rotate-forever {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -71,22 +102,27 @@
 <body>
     <main>
         <section>
-            <header>
-                Page 1
-            </header>
-        </section>
-        <section>
-            <header style="background-color: red">
-                Page 2
-            </header>
-        </section>
-
         <button id="app-update" class="app-update" aria-label="Update">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
                 <path fill="none" d="M0 0h24v24H0V0z" />
                 <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
             </svg>
         </button>
+            <header>
+                Page 1
+            </header>
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+            </div>
+        </section>
+        <section>
+            <header style="background-color: red">
+                Page 2
+            </header>
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+            </div>
+        </section>
     </main>
 
     <script src="app.js"></script>
