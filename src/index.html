@@ -8,8 +8,16 @@
     <meta name="Description" content="A PWA boilerplate to build your progressive web apps in.">
     <title>Title</title>
     <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="navy" />
+    <meta name="theme-color" content="#2977ff" />
     <style>
+        /* app shell CSS */
+        :root {
+          --primary: #2977ff;
+          --gray: #ececec;
+          --whitesmoke: #f5f5f5;
+          --dark: #222;
+          --navbar-height: 70px;
+        }
         body {
             margin: 0;
 
@@ -42,13 +50,13 @@
         }
 
         header {
-            background-color: navy;
+            background-color: var(--primary);
             color: white;
             position: absolute;
             top: 0;
             right: 0;
             left: 0;
-            height: 70px;
+            height: var(--navbar-height);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -72,7 +80,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 70px);
+            height: calc(100vh - var(--navbar-height));
         }
 
         .loading-spinner {
@@ -82,7 +90,7 @@
             animation-timing-function: linear;
             height: 30px;
             width: 30px;
-            border: 3px solid navy;
+            border: 3px solid var(--primary);
             border-right-color: transparent;
             border-radius: 50%;
         }
