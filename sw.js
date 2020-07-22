@@ -1,4 +1,4 @@
-importScripts("precache-manifest.af8208daa9bbb0bf45088b74a0515e8d.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("precache-manifest.494656c2a86858ffddd828d270700159.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 console.log("⚙️ Hello from Service Worker");
 
