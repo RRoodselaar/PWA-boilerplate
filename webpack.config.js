@@ -22,7 +22,8 @@ module.exports = {
       {
         from: "./src/manifest.json",
         to: "manifest.json"
-      }
+      },
+      "src/assets"
     ]),
     new WorkboxWebpackPlugin.InjectManifest({
       swSrc: "./src/src-sw.js",
