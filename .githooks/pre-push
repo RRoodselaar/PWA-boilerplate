@@ -33,7 +33,7 @@ build_command
 echo -e "\033[0;32mDeploying $targetbranch branch...\033[0m"
 cd $directory &&
   git add --all &&
-  git commit -m $last_commit_msg &&
+  git commit -m "$last_commit_msg" &&
   git push origin $targetbranch
 
 echo -e "\033[0;32mCleaning up...\033[0m"
