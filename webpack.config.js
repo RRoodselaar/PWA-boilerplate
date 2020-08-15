@@ -14,17 +14,19 @@ module.exports = {
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ["**/*", "!.git/**"]
     }),
-    new CopyWebpackPlugin([
-      {
-        from: "./src/index.html",
-        to: "index.html"
-      },
-      {
-        from: "./src/manifest.json",
-        to: "manifest.json"
-      },
-      "src/assets"
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "./src/index.html",
+          to: "index.html"
+        },
+        {
+          from: "./src/manifest.json",
+          to: "manifest.json"
+        },
+        "./src/assets"
+      ]
+    }),
     new WorkboxWebpackPlugin.InjectManifest({
       swSrc: "./src/src-sw.js",
       swDest: "sw.js"
