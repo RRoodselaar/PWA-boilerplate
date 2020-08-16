@@ -13,6 +13,8 @@ Prerequisites:
 1. Clone this repo.
 1. Run `npm install`.
 1. Start a local server with `npx serve` or use `npm run dev` for hot reload.
+1. Customize the source files in folder "src".
+1. Add your own splash icons by providing an image on https://realfavicongenerator.net.
 
 ## Live demos
 A demo site of the latest version of this project is hosted on both Netlify at https://pwa-boilerplates.netlify.app/ and GitHub Pages at https://rroodselaar.github.io/PWA-boilerplate/.
