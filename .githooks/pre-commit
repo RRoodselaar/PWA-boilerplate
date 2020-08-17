@@ -17,7 +17,7 @@ cd $directory &&
   cd ..
 
 echo -e "\033[0;32mGenerating Lighthouse badges... silently\033[0m"
-lighthouse-badges --urls $(netlify deploy -d $directory --json --silent | json pluck --attr "deploy_url") -o "" &> /dev/null
+lighthouse-badges --urls $(netlify deploy -d $directory --json --prod | json pluck --attr "deploy_url") -o "" &> /dev/null
 
 echo -e "\033[0;32mStaging Lighthouse badges...\033[0m"
 git add lighthouse_*.svg
