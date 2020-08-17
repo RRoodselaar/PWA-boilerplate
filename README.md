@@ -28,4 +28,16 @@ Read more on this in:
 - Using Git Worktree to Deploy GitHub Pages: https://sangsoonam.github.io/2019/02/08/using-git-worktree-to-deploy-github-pages.html
 - Including Hooks in a Git Repository: https://www.darrenlester.com/blog/including-hooks-in-a-git-repository
 
-To use the Git Hook-strategy with this repo, simply run `git config core.hooksPath .githooks` from the console in the root of your local copy.
+To use the Git Hook-strategy with this repo, simply
+- apply execution rights to the Git hook file `chmod +x .githooks/<hook filename>` and
+- run `git config core.hooksPath .githooks` from the console in the root of your local copy.
+
+## Lighthouse integration
+The Lighthouse Badge above is generated using [Emanuele Mazzotta's Lighthouse Badges repo: https://github.com/emazzotta/lighthouse-badges](https://github.com/emazzotta/lighthouse-badges).
+
+These badges are automatically generated before when committing into the master branch of this repository. This is done using the above mentioned Git Hook modification in conjunction with the Netlify CLI to run in a temporary deployment of the application on Netlify to enjoy all the benefits of TLS and other prerequisites for successful hosting of a PWA.
+
+1. install Lighthouse Badges from NPM `npm i -g lighthouse-badges`
+1. install the global tool `npm install netlify-cli -g`
+1. run `netlify deploy --open` once to link it to your account and see its behavior
+1. install JSON toolkit globally to parse output `npm install -g json-cli-toolkit`
