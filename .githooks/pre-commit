@@ -1,0 +1,23 @@
+#!/bin/bash
+directory=dist
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch" != "master" ]; then
+  echo "Git commit hook:only generate badges on master branch"
+  exit 0
+fi
+
+echo -e "\033[0;32mInstalling packages...\033[0m"
+npm install
+
+echo -e "\033[0;32mStarting Netlify build...\033[0m"
+cd $directory &&
+  netlify build --context deploy-preview &&
+  cd ..
+
+echo -e "\033[0;32mGenerating Lighthouse badges... silently\033[0m"
+lighthouse-badges --urls $(netlify deploy -d $directory --json --silent | json pluck --attr "deploy_url") -o "" &> /dev/null
+
+echo -e "\033[0;32mStaging Lighthouse badges...\033[0m"
+git add lighthouse_*.svg
