@@ -1,4 +1,4 @@
-# PWA-boilerplate [![Build status](https://dev.azure.com/digiclowns/PWA-boilerplate/_apis/build/status/PWA-boilerplate-CI)](https://dev.azure.com/digiclowns/PWA-boilerplate/_build/latest?definitionId=2)
+# PWA-boilerplate [![Build status](https://dev.azure.com/digiclowns/PWA-boilerplate/_apis/build/status/PWA-boilerplate-CI)](https://dev.azure.com/digiclowns/PWA-boilerplate/_build/latest?definitionId=2) [![Lighthouse badge](lighthouse_pwa.svg?raw=true)](https://pwa-boilerplates.netlify.app/ "PWA-boilerplate")
 Based on Jad Joubran's repo pwa-series videos (https://github.com/jadjoubran/pwa-series).
 
 The basic idea behind this repo is, that any feature to the repository and the resulting PWA can be studied by looking at the specific commit(s). Thus providing a running course in setting up your PWA and the automation from the committed code. 
