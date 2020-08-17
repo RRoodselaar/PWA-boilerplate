@@ -17,7 +17,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --env.mode development --colors",
-    "build": "webpack"
+    "build": "webpack --env.mode production"
   },
   "repository": {
     "type": "git",
