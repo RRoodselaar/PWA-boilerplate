@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="A PWA boilerplate to build your progressive web apps in.">
+    <title>Title</title>
+    <style>
+        /* app shell CSS */
+        :root {
+          --primary: #2977ff;
+          --gray: #ececec;
+          --whitesmoke: #f5f5f5;
+          --dark: #222;
+          --navbar-height: 70px;
+        }
+
+        .no-select {
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            margin: 0;
+
+            /* Native fonts for all platforms */
+            font-family:
+                /* Future proof */
+                system-ui,
+                /* Safari, Chrome Mac/iOS */
+                -apple-system, BlinkMacSystemFont,
+                /* Windows, Android, KDE */
+                "Segoe UI", Roboto, Oxygen,
+                /* Ubuntu, Gnome, Firefox OS */
+                Ubuntu, Cantarell, "Fira Sans",
+                /* Old Android */
+                "Droid Sans", "Helvetica Neue", sans-serif;
+        }
+
+        main {
+            display: flex;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+        }
+
+        main section {
+            position: relative;
+            min-height: 100vh;
+            flex: 0 0 100vw;
+            scroll-snap-align: start;
+            padding: 0 5vw 0 5vw;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: var(--navbar-height);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .app-update {
+            display: none;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+        }
+
+        .app-update.show {
+            display: block;
+            z-index: 9999;
+        }
+
+        .loading-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .loading-spinner {
+            display: block;
+            animation: rotate-forever .75s linear infinite;
+            height: 30px;
+            width: 30px;
+            border: 3px solid var(--primary);
+            border-right-color: transparent;
+            border-radius: 50%;
+        }
+
+        @keyframes rotate-forever {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+                filter:hue-rotate(360deg);
+            }
+        }
+    </style>
+    <meta name="theme-color" content="#2977ff" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="navy">
+</head>
+
+<body>
+    <main>
+        <button id="app-update" class="app-update no-select" aria-label="Update">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black">
+                <path fill="none" d="M0 0h24v24H0V0z" />
+                <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+            </svg>
+        </button>
+        <section>
+            <%= htmlWebpackPlugin.options.html %>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            // first have all the resources loaded
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("sw.js")
+                    .then(console.log)
+                    .catch(console.error);
+            });
+        }
+    </script>
+</body>
+
+</html>
