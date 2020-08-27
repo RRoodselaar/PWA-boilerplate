@@ -3,8 +3,6 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
-const prodConfig = require("./config.prod.js");
-
 module.exports = env => {
   const mode = env.mode ? env.mode : "development";
 
@@ -33,8 +31,9 @@ module.exports = env => {
   ];
   
   if (env.mode === "production") {
-    plugins = prodConfig.plugins;
+    const prodConfig = require("./config.prod.js");
     module = prodConfig.module;
+    plugins = prodConfig.plugins;
   }
 
   return {
