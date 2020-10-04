@@ -1,4 +1,4 @@
-# PWA-boilerplate [![Build status](https://dev.azure.com/digiclowns/PWA-boilerplate/_apis/build/status/PWA-boilerplate-CI)](https://dev.azure.com/digiclowns/PWA-boilerplate/_build/latest?definitionId=2) [![Lighthouse badge](lighthouse_pwa.svg?raw=true)](https://pwa-boilerplates.netlify.app/ "PWA-boilerplate")
+# PWA-boilerplate [![Build status](https://dev.azure.com/digiclowns/PWA-boilerplate/_apis/build/status/PWA-boilerplate-CI)](https://dev.azure.com/digiclowns/PWA-boilerplate/_build/latest?definitionId=2) [![Lighthouse badge](lighthouse_pwa.svg?raw=true)](https://pwa-boilerplates.netlify.app/ "PWA-boilerplate") [![Netlify Status](https://api.netlify.com/api/v1/badges/6c95a963-5e40-4500-a149-f9a475b5d892/deploy-status)](https://app.netlify.com/sites/pwa-boilerplates/deploys)
 Based on Jad Joubran's repo pwa-series videos (https://github.com/jadjoubran/pwa-series).
 
 The basic idea behind this repo is, that any feature to the repository and the resulting PWA can be studied by looking at the specific commit(s). Thus providing a running course in setting up your PWA and the automation from the committed code. 
@@ -35,7 +35,7 @@ To use the Git Hook-strategy with this repo, simply
 ## Lighthouse integration
 The Lighthouse Badge above is generated using [Emanuele Mazzotta's Lighthouse Badges repo: https://github.com/emazzotta/lighthouse-badges](https://github.com/emazzotta/lighthouse-badges).
 
-These badges are automatically generated before when committing into the master branch of this repository. This is done using the above mentioned Git Hook modification in conjunction with the Netlify CLI to run in a temporary deployment of the application on Netlify to enjoy all the benefits of TLS and other prerequisites for successful hosting of a PWA.
+These badges are automatically generated when committing into the master branch of this repository. This is done using the above mentioned Git Hook modification in conjunction with the Netlify CLI to run in a temporary deployment of the application on Netlify to enjoy all the benefits of TLS and other prerequisites for successful hosting of a PWA.
 
 1. install Lighthouse Badges from NPM `npm i -g lighthouse-badges`
 1. install the global tool `npm install netlify-cli -g`
