@@ -7,7 +7,7 @@ const Marked = require("marked");
 const RemarkHTML = require('remark-html');
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
-const markdownFilepath = '/readme.md';
+const markdownFilepath = './readme.md';
 const templateHtmlFilepath = "./gh-pages/index.html";
 
 const importedMarkdown = fs.readFileSync(path.join(__dirname, markdownFilepath), 'utf8');
