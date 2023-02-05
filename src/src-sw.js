@@ -1,3 +1,5 @@
+import { precacheAndRoute } from "workbox-precaching";
+
 console.log("⚙️ Hello from Service Worker");
 
 workbox.routing.registerRoute(
@@ -15,4 +17,4 @@ addEventListener("message", event => {
   } 
 });
 
-workbox.precaching.precacheAndRoute(self.__precacheManifest);
+precacheAndRoute(self.__WB_MANIFEST)
