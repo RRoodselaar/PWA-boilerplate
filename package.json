@@ -4,7 +4,7 @@
   "description": "PWA boilerplate code",
   "main": "app.js",
   "dependencies": {
-    "workbox-window": "^6.5.4"
+    "workbox-window": "^6.6.0"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
